@@ -35,3 +35,9 @@ QuickQuiz is a  front-end web application that delivers a short set of multiple-
 ### **Data Privacy Note**
 
 The application stores **no personal data**; all state exists **in memory** for the current session only.
+
+---
+
+### **Wireframes & Design Planning**
+
+<img src="assets/img/Mobile-View.png">
