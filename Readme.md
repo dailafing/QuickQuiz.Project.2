@@ -32,6 +32,12 @@ QuickQuiz is a  front-end web application that delivers a short set of multiple-
 
 ---
 
+### **API Questions**
+
+The questions will be loaded from an API JSON for fast loading and making that public may help other learners who may want to make use of the endpoint.
+
+---
+
 ### **Data Privacy Note**
 
 The application stores **no personal data**; all state exists **in memory** for the current session only.
