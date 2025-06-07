@@ -38,6 +38,56 @@ The questions will be loaded from an API JSON for fast loading and making that p
 
 ---
 
+### **Accessability**
+
+To meet requirements for Accessability, QuickQuiz will:
+
+- Allow users to use their Keyboard to navigate and interact with the game
+
+- Naturally has contrasting colours.
+
+- Will avoid using larger text by default, since users with those needs will most likely have their own settings for enlarged fonts. So this will avoid having fonts that are too large to be ledgible.
+
+- Make use of ARIA lables and ARIA live region for feedback.
+
+- Screen reader friendly.
+
+- Accessible text (not hidden behind elements, clear labels, etc.)
+
+---
+
+### **JavaScript Logic**
+
+To meet requirements for the demonstration of JavaScript Logic, QuickQuiz will:
+
+- Make use of conditional logic. For example, if the correct answer to a question is on button 3, the application will check if the user has clicked button 3, and award the user with a point.
+    - Similarly, the else conditional will deduct a 'life' from the user.
+    - Each time the next question is about to be loaded, we should ensure the lives are not 0. If so, the end game screen should be displayed, rather than the next question.
+
+- Demonstrate sucsessful linkage to a .js file
+
+- Will pass a linter test (eg. JSLint)
+
+---
+
+### **Functional HTML & CSS**
+
+- Demonstrate clean and valid HTML.
+
+- Demonstrate HTML Best Practices (Semantic structure, CSS in external stylesheet).
+
+---
+
+### **Misc. Criteria**
+
+- Will adjust layout depending on screen size.
+
+- Will design features that allow the user to start and control actions (e.g. clicking buttons, filling forms) and receive feedback (e.g. visual change, success messages).
+
+- Will organise code and assets files in directories by file type. and make use of external files.
+
+---
+
 ### **Data Privacy Note**
 
 The application stores **no personal data**; all state exists **in memory** for the current session only.
