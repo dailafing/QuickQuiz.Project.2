@@ -1,7 +1,7 @@
 ## Project Briefing
 
 ### **Working Title**
-**QuickQuiz** – an accessible, responsive general-knowledge quiz
+**QuickQuiz** – an accessible, responsive general-knowledge digital quiz, that people can play online to test their knowledge in a range of topics.
 
 ---
 
@@ -9,12 +9,12 @@
 
 QuickQuiz is a  front-end web application that delivers a short set of multiple-choice questions. It is designed to:
 
-- Help users test their general knowledge in under two minutes  
+- Help users test their general knowledge
 - Demonstrate interactive JavaScript, responsive layout, accessibility best practices, and UX principles suitable for grading
 
 ---
 
-### **How the User Will Use It**
+### **How the Player Will Use It**
 
 1. **Landing / Start screen** – The user optionally enters a display name and presses **“Start Quiz”**  
 2. **Question screen** – Each question is shown with four answer buttons. The user selects one; immediate colour-coded feedback appears, and the score counter updates  
@@ -96,4 +96,11 @@ The application stores **no personal data**; all state exists **in memory** for 
 
 ### **Wireframes & Design Planning**
 
+#### Desktop View
+<img src="assets/img/Desktop-View.png">
+
+
+#### Mobile View
 <img src="assets/img/Mobile-View.png">
+
+---
