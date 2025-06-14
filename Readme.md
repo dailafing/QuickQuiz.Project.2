@@ -61,6 +61,8 @@ To meet requirements for Accessability, QuickQuiz will:
 
 - Accessible text (not hidden behind elements, clear labels, etc.)
 
+- Follow W3C accessibility standards (ie. <b>type="button"</b> on buttons)
+
 ---
 
 ### **JavaScript Logic**
