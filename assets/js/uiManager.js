@@ -4,7 +4,6 @@
 (function () {
     const categoryButtons = document.querySelectorAll('#category-buttons button');
     const selectedCategoryText = document.getElementById('selectedCategoryText');
-    const selectedCategoryValue = document.getElementById('selectedCategoryValue');
   
     let currentlySelectedButton = null;
   
@@ -19,7 +18,7 @@
       currentlySelectedButton = button;
   
       // Update visible text confirmation
-      selectedCategoryValue.textContent = button.textContent;
+      selectedCategoryText.textContent = button.textContent + " selected. Tap Start Game to play!";
       selectedCategoryText.style.display = 'block'; // Criteria 1.5 — textual feedback for accessibility
     }
   
@@ -31,7 +30,7 @@
         // Keyboard handler for Enter or Space
         button.addEventListener('keydown', (e) => {
           if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault(); // Prevent scroll
+            e.preventDefault();
             handleCategorySelection(button);
           }
         });

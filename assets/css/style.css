@@ -9,7 +9,7 @@
     --btn-border-colour: #000000;          /* Border colour for all buttons */
     --focus-outline-colour: #005fcc;       /* Colour for focus ring (keyboard accessibility) */
     --btn-category: gold;                  /* Default unselected state */
-    --btn-selected-category: red;          /* Selected category visual cue */
+    --btn-selected-category: #45d945;          /* Selected category visual cue */
   }
 
 body {
@@ -113,6 +113,11 @@ body {
     outline: 3px solid var(--focus-outline-colour);
     outline-offset: 2px;
   }
+
+  .button-grid button.selected { /* Criteria 1.2 — shows when selected */
+    background-color: var(--btn-selected-category);
+  }
+  
   
   
   
