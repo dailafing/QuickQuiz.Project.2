@@ -1,12 +1,13 @@
 # Menu
 
 - Project Breifing (Readme.me) - <b>You are here</b>
-- Feedback & Notes
+- <a href="Documentation/Feedback_Notes.md">Feedback & Notes</a>
+- <a href="Documentation/Criteria.md">Criteria Notes & References</a>
+---
 
+### Project Briefing 
 
-## Project Briefing
-
-### **Working Title**
+#### **Working Title**
 **QuickQuiz** – an accessible, responsive general-knowledge digital quiz, that people can play online to test their knowledge in a range of topics.
 
 ---
@@ -103,10 +104,10 @@ The application stores **no personal data**; all state exists **in memory** for 
 ### **Wireframes & Design Planning**
 
 #### Desktop View
-<img src="assets/img/Desktop-View.png">
+<img src="Documentation/img/Desktop-View.png">
 
 
 #### Mobile View
-<img src="assets/img/Mobile-View.png">
+<img src="Documentation/img/Mobile-View.png">
 
 ---

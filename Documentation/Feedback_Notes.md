@@ -1,3 +1,20 @@
+# Menu
+
+- <a href="/Readme.md">Project Breifing (Readme.me)</a>
+- Feedback & Notes - <b>You are here</b>
+- <a href="Criteria.md">Criteria Notes & References</a>
+---
+
+### Documentaion Evolution
+
+The documentation continues to evolve throught the project development. As I make changes and improvements, I make sure to document that here
+
+Additionally, the commit notes are detailed, and frequent, with small changes. Allowwing an assessor to observe the project's evolution in thourough detail.
+
+Reading the project Criteria revealed that the documentation assets should be kept distinctly seperate from the project's files, so I'll be doing that for the next commit.
+
+---
+
 ### Wireframe Evolution
 
 #### <b>Change 1:</b> Initial Mobile Design</b> 
@@ -8,11 +25,10 @@ After feedback and testing, the mobile layout was adjusted to support a **a sing
 
 | Before | After |
 |--------|-------|
-| <img src="./assets/img/Mobile-View_old.png" width="300"/> | <img src="./assets/img/Mobile-View.png" width="300"/> |
+| <img src="./img/Mobile-View_old.png" width="300"/> | <img src="./img/Mobile-View.png" width="300"/> |
 
 
 The desktop wireframe now uses the 2-column layout to ensure **visual consistency** and reduce DOM complexity when switching views using media queries.
 
-
-----
+---
 
