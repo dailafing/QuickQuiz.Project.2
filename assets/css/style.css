@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #e0f0ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+  }
+  
+  main {
+    width: 100%;
+    max-width: 400px;
+    background: #3db6ff;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    color: #000;
+  }
+
+  /* text elements */
+  #welcomeText{
+    text-align: left;
+  }
+  @media screen and (max-width: 600px) { /* Mobile responsive - c1.3(a) */
+    #welcomeText {
+        text-align: center;
+    }
+  }
+
+  #playerName { /* Criteria 1.5 — “legible, unobscured text, consistent styling” */
+    max-width: 200px;
+    padding: 0.6rem 1rem;
+    margin: 0.5rem 0 1rem;
+    font-size: 1rem;
+    border: 4px solid #1acbd7;
+    border-radius: 10px;
+    outline: none;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  #playerName:focus { /* Criteria 1.2 — “feedback when interacting with elements” */
+    border-color: gold;
+    box-shadow: 0 0 0 2px rgba(61, 182, 255, 0.3);
+  }
+  @media screen and (max-width: 600px) { /* Mobile responsive - c1.3(a) */
+    #playerName {
+        max-width: 100%;
+    }
+  }
+  
+
+
+
+  /* sections */
+  section#start-screen {
+    display: flex;
+    flex-direction: column;
+  }  
+  
+  
+
+  /* layout for buttons */
+  .button-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 1rem;
+  }
+  @media screen and (max-width: 600px) { /* Mobile responsive - c1.3(a) */
+    .button-grid {
+      grid-template-columns: 1fr; /* Switch to single column */
+    }
+  }
+  
+  .button-grid button {
+    flex: 1 1 45%;
+    padding: 0.6rem 1rem;
+    background: gold;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .start-button {
+    margin-top: 1rem;
+    background: limegreen;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 10px;
+    align-self: flex-end;
+  }
+  @media screen and (max-width: 600px) { /* Mobile responsive - c1.3(a) */
+    .start-button {
+      align-self: center;
+      width: 75%;
+    }
+  }
+
+
+  /* hide all parts by default */
+  .screen {
+    display: none;
+  }
+  .screen.active {
+    display: block;
+  }
+
+  #selectedCategoryText {
+    display: none;
+  }
+  
+  

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>QuickQuiz</title>
+  <link rel="stylesheet" href="/assets/css/style.css" /> <!-- External style sheet - c2.5(c)  -->
+</head>
+<body>
+
+  <main id="quiz-app">
+
+    <!-- START SCREEN -->
+    <section id="start-screen" class="screen active">
+
+      <h1 id="welcomeText">Welcome to QuickQuiz</h1>
+ 
+      <label for="playerName">Your name:</label>
+      <input type="text" id="playerName" placeholder="Player Name" />
+
+      <p>Choose a subject to begin testing your knowledge</p>
+
+      <div id="category-buttons" class="button-grid">
+
+        <button data-category="food">Food</button>
+        <button data-category="sport">Sport</button>
+        <button data-category="geography">Geography</button>
+        <button data-category="trains">Trains</button>
+        <button data-category="science">Science</button>
+        <button data-category="history">History</button>
+
+      </div>
+
+      <p>Today's Best: <span id="bestScore">0</span></p>
+
+      <p id="selectedCategoryText">[Category] Selected --->: 
+        <span id="selectedCategoryValue">Nothing Selected</span>
+      </p>
+
+      <button id="startBtn" class="start-button">Start Game!</button>
+
+    </section>
+
+  </main>
+
+  <script src="assets/js/app.js"></script> <!-- Load script at eof - c2.5(a&b) -->
+
+</body>
+</html>
