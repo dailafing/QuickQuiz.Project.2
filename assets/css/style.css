@@ -8,6 +8,8 @@
     --start-btn-hover: #45d945;            /* Hover colour for start button */
     --btn-border-colour: #000000;          /* Border colour for all buttons */
     --focus-outline-colour: #005fcc;       /* Colour for focus ring (keyboard accessibility) */
+    --btn-category: gold;                  /* Default unselected state */
+    --btn-selected-category: red;          /* Selected category visual cue */
   }
 
 body {
@@ -88,7 +90,7 @@ body {
   .button-grid button {
     flex: 1 1 45%;
     padding: 0.6rem 1rem;
-    background: var(--btn-colour);
+    background: var(--btn-category);
     border: 2px solid var(--btn-border-colour); /* Criteria 1.5 — contrast & visible borders for clarity */
     border-radius: 10px;
     font-size: 1rem;
