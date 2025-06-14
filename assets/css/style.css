@@ -1,7 +1,19 @@
+/* CSS variables */
+:root { /* c2.4 visual consistency, c3.5 maintainability */
+    --bg-colour: #e0f0ff;                  /* Page background */
+    --panel-colour: #3db6ff;               /* Main panel background */
+    --btn-colour: gold;                    /* Quiz category buttons */
+    --btn-hover-colour: #f7c600;           /* Hover colour for quiz buttons */
+    --start-btn-colour: limegreen;         /* Start game button */
+    --start-btn-hover: #45d945;            /* Hover colour for start button */
+    --btn-border-colour: #000000;          /* Border colour for all buttons */
+    --focus-outline-colour: #005fcc;       /* Colour for focus ring (keyboard accessibility) */
+  }
+
 body {
     margin: 0;
     font-family: sans-serif;
-    background-color: #e0f0ff;
+    background-color: var(--bg-colour);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,7 +23,7 @@ body {
   main {
     width: 100%;
     max-width: 400px;
-    background: #3db6ff;
+    background: var(--panel-colour);
     border-radius: 1rem;
     padding: 1.5rem;
     color: #000;
@@ -40,7 +52,7 @@ body {
   }
   
   #playerName:focus { /* Criteria 1.2 — “feedback when interacting with elements” */
-    border-color: gold;
+    border-color: var(--btn-colour);
     box-shadow: 0 0 0 2px rgba(61, 182, 255, 0.3);
   }
   @media screen and (max-width: 600px) { /* Mobile responsive - c1.3(a) */
@@ -72,29 +84,69 @@ body {
     }
   }
   
+  /* Buttons (In The Button Grid) */
   .button-grid button {
     flex: 1 1 45%;
     padding: 0.6rem 1rem;
-    background: gold;
-    border: none;
+    background: var(--btn-colour);
+    border: 2px solid var(--btn-border-colour); /* Criteria 1.5 — contrast & visible borders for clarity */
     border-radius: 10px;
     font-size: 1rem;
     cursor: pointer;
+    box-shadow: 3px 3px 0 #555; /* Criteria 1.2 — visual appeal for interactivity */
+    transition: all 0.2s ease-in-out; /* Criteria 2.4 — smooth transitions for user experience */
   }
   
-  .start-button {
+  .button-grid button:hover { /* Criteria 1.2 — feedback when interacting with elements */
+    background: var(--btn-hover-colour);
+    box-shadow: 2px 2px 0 #444;
+  }
+  
+  .button-grid button:active { /* Criteria 1.2 — feedback when interacting with elements */
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 0 #333;
+  }
+  
+  .button-grid button:focus { /* Criteria 1.2 & 3.5 — keyboard accessibility, visible focus state */
+    outline: 3px solid var(--focus-outline-colour);
+    outline-offset: 2px;
+  }
+  
+  
+  
+  /* START BUTTON */
+.start-button {
     margin-top: 1rem;
-    background: limegreen;
-    border: none;
+    background: var(--start-btn-colour);
+    border: 2px solid var(--btn-border-colour); /* Criteria 1.5 — consistent styling & visibility */
     padding: 0.7rem 1.5rem;
     border-radius: 10px;
     align-self: flex-end;
+    box-shadow: 3px 3px 0 #555; /* Criteria 1.2 — visual cue for interactivity */
+    transition: all 0.2s ease-in-out; /* Criteria 2.4 — smooth, professional interaction */
+    cursor: pointer;
   }
-  @media screen and (max-width: 600px) { /* Mobile responsive - c1.3(a) */
+  
+  @media screen and (max-width: 600px) { /* Criteria 1.3(a) — mobile responsive layout */
     .start-button {
       align-self: center;
       width: 75%;
     }
+  }
+  
+  .start-button:hover { /* Criteria 1.2 — hover feedback */
+    background: var(--start-btn-hover);
+    box-shadow: 2px 2px 0 #444;
+  }
+  
+  .start-button:active { /* Criteria 1.2 — pressed feedback */
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 0 #333;
+  }
+  
+  .start-button:focus { /* Criteria 1.2 & 3.5 — keyboard accessibility, visible focus */
+    outline: 3px solid var(--focus-outline-colour);
+    outline-offset: 2px;
   }
 
 
