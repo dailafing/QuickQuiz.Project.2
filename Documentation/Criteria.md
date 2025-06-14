@@ -63,3 +63,21 @@ web application should:
     - Apply consistent styling (e.g. fonts, colours, spacing are uniform across the site).
     - Ensure the foreground (text or buttons) is not too distracting (e.g. no flashing
 animations that make it hard to focus).
+
+
+
+#### Criteria 2:
+
+- 2.5 Use external files and proper linking. You should:
+
+    - Put JavaScript code in external .js files.
+    - Link these files at the bottom of the <body> (or in the <head> only if needed before the body loads).
+    - Place CSS in external .css files, linked in the <head> section of your HTML.
+
+
+
+
+- 2.9 Organise your project files. You should:
+
+    - Group your files by type into separate folders. E.g. css/, js/, images/, fonts/
+    - Keep the project tidy and structured, making it easy to find things
