@@ -11,6 +11,7 @@
   <main id="quiz-app">
 
     <!-- START SCREEN -->
+    <!-- criteria 2.5(c) — “Efficient layout and transitions” -->
     <section id="start-screen" class="screen active">
 
       <h1 id="welcomeText">Welcome to QuickQuiz</h1>
@@ -46,17 +47,52 @@
 
       <p id="selectedCategoryText" aria-live="polite">No Category Selected</p>
 
-      <button type="button" id="startBtn" class="start-button" aria-label="Start The Game">
-        <p class="btn-text">Start Game!</p></button>
+      <!-- Criteria 1.2 / 3.2 — inactive until category picked -->
+      <button
+        type="button"
+        id="startBtn"
+        class="start-button start-button--disabled"
+        aria-label="Start the game"
+        disabled  
+      >
+        <p class="btn-text">Start Game!</p>
+      </button>
+
+
+    </section>
+
+    <!-- GAME SCREEN -->
+    <!-- criteria 2.5(c) — “Efficient layout and transitions” -->
+    <section id="game-screen" class="screen">
+
+      <h2 id="question-text">Question goes here</h2>
+
+      <ul id="answer-list" class="button-grid" role="list">
+        <li><button class="answer-btn">Answer 1</button></li>
+        <li><button class="answer-btn">Answer 2</button></li>
+        <li><button class="answer-btn">Answer 3</button></li>
+        <li><button class="answer-btn">Answer 4</button></li>
+      </ul>
+
+      <p id="feedback" aria-live="polite"></p>
+      <p id="question-counter">Question 1 of 10</p>
+
+
+    </section>
+
+
+    <!-- RESULTS SCREEN -->
+    <!-- criteria 2.5(c) — “Efficient layout and transitions” -->
+    <section id="result-screen" class="screen">
 
     </section>
 
   </main>
 
   <!-- Load scripts at eof - c2.5(a&b) -->
-  <script src="assets/js/app.js"></script>
-  <script src="assets/js/keyboardNavigation.js"></script> 
-  <script src="assets/js/uiManager.js"></script> 
+<script type="module" src="assets/js/app.js"></script>
+<script type="module" src="assets/js/keyboardNavigation.js"></script> 
+<script type="module" src="assets/js/uiManager.js"></script> 
 
 </body>
 </html>
