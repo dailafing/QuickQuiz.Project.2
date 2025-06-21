@@ -18,12 +18,12 @@ let currentQuestionIndex = 0;
 let score = 0;
 
 export function renderQuestion() {
-  const q = questions[currentQuestionIndex];
   const questionText = document.getElementById('question-text');
   const answerList = document.getElementById('answer-list');
   const questionCounter = document.getElementById('question-counter');
   const feedback = document.getElementById('feedback');
   const category = document.querySelector('.selected').getAttribute('data-category');
+  const q = questions[category][currentQuestionIndex];
 
   // Clear previous state
   feedback.textContent = '';
