@@ -44,7 +44,7 @@ main {
   #playerName { /* Criteria 1.5 — “legible, unobscured text, consistent styling” */
     max-width: 200px;
     padding: 0.6rem 1rem;
-    margin: 0.5rem 0 1rem;
+    margin: 0.5rem 0 0rem;
     font-size: 1rem;
     border: 4px solid #1acbd7;
     border-radius: 10px;
@@ -193,3 +193,17 @@ main {
   }
   
   
+  /* Highlight invalid input */
+  .input-invalid {                         /* Criteria 1.3 — Input validation feedback */
+    border: 2px solid red;
+    outline: none;
+  }
+
+  /* Error message below the input */
+  .input-error {                           /* Criteria 1.4 — Clear accessible error messaging */
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 2px;
+    margin-left: 8px;
+    min-height: 1.2em;                     /* Prevent layout shift when message appears */
+  }
