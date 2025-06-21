@@ -33,7 +33,7 @@ export function renderQuestion() {
   console.log(questions[category]);
 
   questionText.textContent = q.question;
-  questionCounter.textContent = `Question ${currentQuestionIndex + 1} of ${questions.length}`;
+  questionCounter.textContent = `Question ${currentQuestionIndex + 1} of ${questions[category].length}`;
 
   q.answers.forEach((text, index) => {
     const li = document.createElement('li');
