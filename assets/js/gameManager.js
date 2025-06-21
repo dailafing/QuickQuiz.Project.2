@@ -45,7 +45,7 @@ export function renderQuestion() {
     btn.textContent = text;
 
     btn.addEventListener('click', () => {
-      handleAnswer(index);
+      handleAnswer(index, category);
     });
 
     li.appendChild(btn);
@@ -53,8 +53,8 @@ export function renderQuestion() {
   });
 }
 
-function handleAnswer(selectedIndex) {
-  const current = questions[currentQuestionIndex];
+function handleAnswer(selectedIndex, category) {
+  const current = questions[category][currentQuestionIndex];
   const feedback = document.getElementById('feedback');
 
   if (selectedIndex === current.correct) {
