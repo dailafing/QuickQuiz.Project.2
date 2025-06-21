@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
             playerNameInput.classList.remove('input-invalid');
             nameError.textContent = '';
         }
-        });
+  });
 
   startBtn.addEventListener('click', () => {
     const name = playerNameInput.value.trim();
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Start game
     showScreen('game-screen');
     initGame(name);
-    });
+  });    
 
 
 });

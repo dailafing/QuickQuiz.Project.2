@@ -68,7 +68,6 @@ main {
 
   /* sections */
   section#start-screen {
-    display: flex;
     flex-direction: column;
   }  
   
@@ -185,6 +184,7 @@ main {
     display: none;
   }
   .screen.active {
+    display: flex;
     display: block;
   }
 
