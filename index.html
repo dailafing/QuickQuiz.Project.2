@@ -16,26 +16,38 @@
       <h1 id="welcomeText">Welcome to QuickQuiz</h1>
  
       <label for="playerName">Your name:</label>
-      <input type="text" id="playerName" placeholder="Player Name" />
+      <input type="text" id="playerName" placeholder="Player Name" aria-label="Enter your name in this box"/>
 
       <p>Choose a subject to begin testing your knowledge</p>
 
       <div id="category-buttons" class="button-grid">
 
-        <button type="button" data-category="food">Food</button>
-        <button type="button" data-category="sport">Sport</button>
-        <button type="button" data-category="geography">Geography</button>
-        <button type="button" data-category="trains">Trains</button>
-        <button type="button" data-category="science">Science</button>
-        <button type="button" data-category="history">History</button>
+        <button type="button" data-category="food" aria-label="Select Food cetegory">
+          <p class="btn-text">Food</p></button>
+
+        <button type="button" data-category="sport" aria-label="Select Sport cetegory">
+          <p class="btn-text">Sport</p></button>
+
+        <button type="button" data-category="geography" aria-label="Select Geography cetegory">
+          <p class="btn-text">Geography</p></button>
+
+        <button type="button" data-category="trains" aria-label="Select Trains cetegory">
+          <p class="btn-text">Trains</p></button>
+
+        <button type="button" data-category="science" aria-label="Select Science cetegory">
+          <p class="btn-text">Science</p></button>
+
+        <button type="button" data-category="history" aria-label="Select History cetegory">
+          <p class="btn-text">History</p></button>
 
       </div>
 
-      <p>Today's Best: <span id="bestScore">0</span></p>
+      <p id="bestScore">Today's Best: 0</p>
 
-        <span id="selectedCategoryText">Nothing Selected</span>
+      <p id="selectedCategoryText" aria-live="polite">No Category Selected</p>
 
-      <button type="button" id="startBtn" class="start-button">Start Game!</button>
+      <button type="button" id="startBtn" class="start-button" aria-label="Start The Game">
+        <p class="btn-text">Start Game!</p></button>
 
     </section>
 

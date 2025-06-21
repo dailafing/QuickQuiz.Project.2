@@ -22,7 +22,7 @@ body {
     padding: 2rem;
   }
   
-  main {
+main {
     width: 100%;
     max-width: 400px;
     background: var(--panel-colour);
@@ -116,6 +116,13 @@ body {
 
   .button-grid button.selected { /* Criteria 1.2 — shows when selected */
     background-color: var(--btn-selected-category);
+  }
+
+  .btn-text {               /* Criteria 1.5 — legible, unobscured text */
+    display: inline;        /* stop it being a block that stretches button */
+    margin: 0 ;             /* Criteria 2.4 — consistency across buttons */
+    padding: 0;             /* remove default browser padding */
+    line-height: 1;         /* keeps vertical centring predictable */
   }
   
   
