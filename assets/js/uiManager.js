@@ -4,6 +4,7 @@
 (function () {
     const categoryButtons = document.querySelectorAll('#category-buttons button');
     const selectedCategoryText = document.getElementById('selectedCategoryText');
+    const startBtn = document.getElementById('startBtn');
   
     let currentlySelectedButton = null;
   
@@ -20,6 +21,13 @@
       // Update visible text confirmation
       selectedCategoryText.textContent = button.textContent + " selected. Tap Start Game to play!";
       selectedCategoryText.style.display = 'block'; // Criteria 1.5 — textual feedback for accessibility
+
+      // Enable Start button after first valid selection
+      if (startBtn.disabled) {
+        startBtn.disabled = false;  // Criteria 3.2 — user now in control
+        startBtn.classList.remove('start-button--disabled');
+      }
+
     }
   
     function initCategoryButtons() {

@@ -163,6 +163,22 @@ main {
     outline-offset: 2px;
   }
 
+  .start-button--disabled { /* Criteria 1.2 — visual feedback: disabled look */
+    background: #b5b5b5;
+    border-color: #7d7d7d;
+    color: #444;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+
+  /* No hover / active effect while disabled */
+  .start-button--disabled:hover,
+  .start-button--disabled:active { 
+    transform: none;
+    box-shadow: none;
+  }
+
+
 
   /* hide all parts by default */
   .screen {
