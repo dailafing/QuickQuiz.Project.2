@@ -52,6 +52,7 @@ export function renderQuestion() {
     li.appendChild(btn);
     answerList.appendChild(li);
   });
+  logToFirebase(`Player: ${thePlayersName.value} chose the ${category} category, and is presented with the question: "${q.question}"`);
 }
 
 function handleAnswer(answerText, selectedIndex, category, q) {
@@ -63,16 +64,20 @@ function handleAnswer(answerText, selectedIndex, category, q) {
     button.disabled = true;
   }
 
+  let firebaseMsg = `Player: ${thePlayersName.value} chose ${q.answers[selectedIndex]} for the question: "${q.question}."`
   if (selectedIndex === q.correctIndex) {
     score++;
     feedback.innerHTML = `
         <b>${answerText}</b> is correct!
         `;
+        firebaseMsg += ` ${thePlayersName.value} was CORRECT!`
   } else {
     feedback.innerHTML = `
         <b>${answerText}</b> is wrong! The correct answer was <b>${q.answers[q.correctIndex]}</b>
         `;
-  }
+        firebaseMsg += ` ${thePlayersName.value} was wrong :(`
+  }  
+  logToFirebase(firebaseMsg);
   
   questionCounter.innerHTML+= `<button id="nextQuestionBtn" class="start-button">Next Question</button>`;
   const nextQuestionButton = document.getElementById('nextQuestionBtn');
@@ -94,6 +99,9 @@ function showResultScreen(category) {
   showScreen('result-screen');
 
   const resultSection = document.getElementById('result-screen');
+  let endQuizMsg = `${thePlayersName.value} completed the ${questions[category].length} questions from the ${category} category, and scored ${score}!`;
+  logToFirebase(endQuizMsg);
+
   resultSection.innerHTML = `
     <h2>Quiz Complete!</h2>
     <p>Your score was ${score} out of a possible ${questions[category].length}</p>
