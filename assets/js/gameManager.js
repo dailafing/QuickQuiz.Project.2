@@ -55,10 +55,9 @@ export function renderQuestion() {
 }
 
 function handleAnswer(answerText, selectedIndex, category, q) {
-  const current = questions[category][currentQuestionIndex];
+  const current = q;
   const feedback = document.getElementById('feedback');
-
-  if (selectedIndex === current.correct) {
+  if (selectedIndex === current.correctIndex) {
     score++;
     feedback.innerHTML = `
         <b>${answerText}</b> is correct!
