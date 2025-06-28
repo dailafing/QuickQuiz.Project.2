@@ -21,7 +21,6 @@ const questionCounter = document.getElementById('question-counter');
 export function renderQuestion() {
   const questionText = document.getElementById('question-text');
   const answerList = document.getElementById('answer-list');
-  const questionCounter = document.getElementById('question-counter');
   const feedback = document.getElementById('feedback');
   const category = document.querySelector('.selected').getAttribute('data-category');
   const q = questions[category][currentQuestionIndex];
@@ -57,6 +56,13 @@ export function renderQuestion() {
 function handleAnswer(answerText, selectedIndex, category, q) {
   const current = q;
   const feedback = document.getElementById('feedback');
+  
+  // Disable the answer buttons
+  const answerButtons = document.getElementsByClassName('answer-btn');
+  for (const button of answerButtons) {
+    button.disabled = true;
+  }
+
   if (selectedIndex === current.correctIndex) {
     score++;
     feedback.innerHTML = `
@@ -71,7 +77,6 @@ function handleAnswer(answerText, selectedIndex, category, q) {
   questionCounter.innerHTML+= `<button id="nextQuestionBtn" class="start-button">Next Question</button>`
 
   currentQuestionIndex++;
-
   if (currentQuestionIndex < questions.length) {
     // setTimeout(renderQuestion, 4000);
   } else {
