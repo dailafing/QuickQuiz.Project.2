@@ -79,7 +79,7 @@ function handleAnswer(answerText, selectedIndex, category, q) {
   }  
   logToFirebase(firebaseMsg);
   
-  questionCounter.innerHTML+= `<button id="nextQuestionBtn" class="start-button">Next Question</button>`;
+  questionCounter.innerHTML += `<br><button id="nextQuestionBtn" class="start-button">Next Question</button>`;
   const nextQuestionButton = document.getElementById('nextQuestionBtn');
 
   currentQuestionIndex++;
