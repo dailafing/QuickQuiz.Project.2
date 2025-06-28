@@ -1,10 +1,13 @@
 // keyboardNavigation.js
 
 // ====== Global State ======
+
 let navigableItems = [];
 let currentFocusedIndex = 0;
 
+
 // ====== Init ======
+
 function initKeyboardNavigation() {
   const categoryButtons = Array.from(document.querySelectorAll('#category-buttons button'));
   const startButton = document.getElementById('startBtn');
@@ -30,7 +33,6 @@ function initKeyboardNavigation() {
   });
 
   const key = event.key;
-
   switch (key) { // Criteria 3.5 — Directional nav
     case 'ArrowRight':
     case 'ArrowDown':
@@ -51,11 +53,13 @@ function initKeyboardNavigation() {
   }
 }
 
+
 // ====== Change Focus ======
 function moveFocus(delta) {
   currentFocusedIndex = (currentFocusedIndex + delta + navigableItems.length) % navigableItems.length;
   navigableItems[currentFocusedIndex].focus(); // Criteria 3.5 — Keyboard visual feedback
 }
+
 
 // ====== Boot ======
 document.addEventListener('DOMContentLoaded', () => {
