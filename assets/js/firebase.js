@@ -6,7 +6,8 @@ import {
     addDoc,
     serverTimestamp,
     query,
-    orderBy
+    orderBy,
+    onSnapshot,
 } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-firestore.js";
 
 
@@ -39,6 +40,8 @@ try {
     }
 };
 
+let logListenerActive = false;
+
 document.getElementById('toggleLog').addEventListener('click', (e) => {
   e.preventDefault();
   const logBox = document.getElementById('logBox');
@@ -48,7 +51,11 @@ document.getElementById('toggleLog').addEventListener('click', (e) => {
   if (isHidden) {
     logBox.style.display = 'block';
     toggleText.textContent = 'Hide log ▲';
-    loadLogsIntoBox(); // refresh when showing
+
+    if (!logListenerActive) {
+      listenToLogUpdates();
+      logListenerActive = true;
+    }
   } else {
     logBox.style.display = 'none';
     toggleText.textContent = 'Show log ▼';
@@ -56,14 +63,11 @@ document.getElementById('toggleLog').addEventListener('click', (e) => {
 });
 
 
-async function loadLogsIntoBox() {
+function listenToLogUpdates() {
   const logBox = document.getElementById('logBox');
-  logBox.innerHTML = 'Loading...';
+  const q = query(collection(db, 'logs'), orderBy('timestamp', 'desc'));
 
-  try {
-    const q = query(collection(db, 'logs'), orderBy('timestamp', 'desc'));
-    const snapshot = await getDocs(q);
-
+  onSnapshot(q, (snapshot) => {
     let output = '';
     snapshot.forEach((doc) => {
       const data = doc.data();
@@ -72,8 +76,9 @@ async function loadLogsIntoBox() {
     });
 
     logBox.innerHTML = output || '(no log entries found)';
-  } catch (e) {
-    logBox.innerHTML = 'Error loading logs: ' + e.message;
-    console.error(e);
-  }
+  }, (error) => {
+    logBox.innerHTML = 'Error loading logs: ' + error.message;
+    console.error(error);
+  });
 }
+
