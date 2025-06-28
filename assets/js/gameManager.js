@@ -17,6 +17,7 @@ export function initGame(playerName) {
 let currentQuestionIndex = 0;
 let score = 0;
 const questionCounter = document.getElementById('question-counter');
+const thePlayersName = document.getElementById('playerName');
 
 export function renderQuestion() {
   const questionText = document.getElementById('question-text');
@@ -84,14 +85,28 @@ function handleAnswer(answerText, selectedIndex, category, q) {
   }
 }
 
-function showResultScreen() {
+function showResultScreen(category) {
   showScreen('result-screen');
 
   const resultSection = document.getElementById('result-screen');
   resultSection.innerHTML = `
     <h2>Quiz Complete!</h2>
-    <p>You scored ${score} out of ${questions.length}</p>
-    <button id="retryBtn" class="start-button">Try Again</button>
+    <p>Your score was ${score} out of a possible ${questions[category].length}</p>
+  `;
+
+  if (score < questions[category].length){
+    resultSection.innerHTML += `
+    <p><b>You can do this ${thePlayersName.value}!<br>We believe in you! :)</b></p>
+    `;
+  } 
+  else {
+    resultSection.innerHTML += `
+    <p><b>That was fantastic ${thePlayersName.value}! 100% score!<br>We knew you could do it! :)</b></p>
+    `;
+  }
+
+  resultSection.innerHTML += `
+    <button id="retryBtn" class="start-button">Play Again</button>
   `;
 
   document.getElementById('retryBtn').addEventListener('click', () => {
