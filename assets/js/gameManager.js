@@ -37,7 +37,7 @@ export function renderQuestion() {
   questionCounter.textContent = `Question ${currentQuestionIndex + 1} of ${questions[category].length}`;
 
   q.answers.forEach((text, index) => {
-    const li = document.createElement('li');
+    // const li = document.createElement('li');
     const btn = document.createElement('button');
 
     btn.className = 'answer-btn';
@@ -49,8 +49,8 @@ export function renderQuestion() {
       handleAnswer(btn.textContent, index, category, q);
     });
 
-    li.appendChild(btn);
-    answerList.appendChild(li);
+    // li.appendChild(btn);
+    answerList.appendChild(btn);
   });
   logToFirebase(`Player: <b>${thePlayersName.value}</b> chose the <b>${category}</b> category, and is presented with the question: <b>"${q.question}"</b>`);
 }
@@ -92,6 +92,15 @@ function handleAnswer(answerText, selectedIndex, category, q) {
     }
 
   });
+
+  document.querySelectorAll('.answer-btn').forEach((btn, i) => {
+  if (i === q.correctIndex) {
+    btn.classList.add('correct');
+  } else if (i === selectedIndex) {
+    btn.classList.add('incorrect');
+  }
+  btn.disabled = true; // disable after answering
+});
 
 }
 
