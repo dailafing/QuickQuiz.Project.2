@@ -207,3 +207,45 @@ main {
     margin-left: 8px;
     min-height: 1.2em;                     /* Prevent layout shift when message appears */
   }
+
+
+  /* // Answer buttons */
+
+  /* Make buttons block-level and equal size */
+.answer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.answer-btn {
+  width: 100%;
+  padding: 15px;
+  font-size: 1rem;
+  background-color: #ffcc00;
+  border: 3px solid #000;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  white-space: normal;
+  word-break: break-word;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.answer-btn:hover {
+  background-color: #ffe680;
+  transform: scale(1.02);
+}
+
+.answer-btn.correct {
+  background-color: #00cc66;
+  color: #fff;
+}
+
+.answer-btn.incorrect {
+  background-color: #cc3333;
+  color: #fff;
+}
