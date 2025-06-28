@@ -71,7 +71,7 @@ function handleAnswer(answerText, selectedIndex, category, q) {
   } else {
     feedback.innerHTML = `
         <b>${answerText}</b> is wrong! The correct answer was <b>${current.answers[current.correctIndex]}</b>
-    `;
+        `;
   }
   
   questionCounter.innerHTML+= `<button id="nextQuestionBtn" class="start-button">Next Question</button>`
