@@ -30,7 +30,7 @@ export function renderQuestion() {
   feedback.textContent = '';
   answerList.innerHTML = '';
 
-  console.log("Selected category: " + category);
+  console.log("Selected category: ", category);
   console.log(questions[category]);
 
   questionText.textContent = q.question;
