@@ -75,14 +75,18 @@ function handleAnswer(answerText, selectedIndex, category, q) {
         `;
   }
   
-  questionCounter.innerHTML+= `<button id="nextQuestionBtn" class="start-button">Next Question</button>`
+  const nextQuestionButton = document.getElementById('nextQuestionBtn');
 
   currentQuestionIndex++;
-  if (currentQuestionIndex < questions.length) {
-    // setTimeout(renderQuestion, 4000);
-  } else {
-    // setTimeout(showResultScreen, 4000);
-  }
+  nextQuestionButton.addEventListener('click', () => {
+    if (currentQuestionIndex < questions[category].length) {
+        renderQuestion();
+    } else {
+        showResultScreen(category);
+    }
+
+  });
+
 }
 
 function showResultScreen(category) {
