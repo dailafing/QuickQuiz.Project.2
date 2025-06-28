@@ -16,6 +16,7 @@ export function initGame(playerName) {
 
 let currentQuestionIndex = 0;
 let score = 0;
+const questionCounter = document.getElementById('question-counter');
 
 export function renderQuestion() {
   const questionText = document.getElementById('question-text');
@@ -63,13 +64,15 @@ function handleAnswer(selectedIndex, category) {
   } else {
     feedback.textContent = `Wrong! The correct answer was ${current.answers[current.correct]}`;
   }
+  
+  questionCounter.innerHTML+= `<button id="nextQuestionBtn" class="start-button">Next Question</button>`
 
   currentQuestionIndex++;
 
   if (currentQuestionIndex < questions.length) {
-    setTimeout(renderQuestion, 1500);
+    // setTimeout(renderQuestion, 4000);
   } else {
-    setTimeout(showResultScreen, 1500);
+    // setTimeout(showResultScreen, 4000);
   }
 }
 
