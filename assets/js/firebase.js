@@ -68,7 +68,7 @@ async function loadLogsIntoBox() {
     snapshot.forEach((doc) => {
       const data = doc.data();
       const ts = data.timestamp?.toDate?.().toLocaleString() || '(no time)';
-      output += `[${ts}] ${data.message}<br>`;
+      output += `[${ts}]<br>${data.message}<br><br>`;
     });
 
     logBox.innerHTML = output || '(no log entries found)';

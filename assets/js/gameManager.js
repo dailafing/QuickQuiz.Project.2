@@ -52,7 +52,7 @@ export function renderQuestion() {
     li.appendChild(btn);
     answerList.appendChild(li);
   });
-  logToFirebase(`Player: ${thePlayersName.value} chose the ${category} category, and is presented with the question: "${q.question}"`);
+  logToFirebase(`Player: <b>${thePlayersName.value}</b> chose the <b>${category}</b> category, and is presented with the question: <b>"${q.question}"</b>`);
 }
 
 function handleAnswer(answerText, selectedIndex, category, q) {
@@ -64,18 +64,18 @@ function handleAnswer(answerText, selectedIndex, category, q) {
     button.disabled = true;
   }
 
-  let firebaseMsg = `Player: ${thePlayersName.value} chose ${q.answers[selectedIndex]} for the question: "${q.question}."`
+  let firebaseMsg = `Player: <b>${thePlayersName.value}</b> chose <b>${q.answers[selectedIndex]}</b> for the question: <b>"${q.question}</b>."`
   if (selectedIndex === q.correctIndex) {
     score++;
     feedback.innerHTML = `
         <b>${answerText}</b> is correct!
         `;
-        firebaseMsg += ` ${thePlayersName.value} was CORRECT!`
+        firebaseMsg += ` <b>${thePlayersName.value}</b> was CORRECT!`
   } else {
     feedback.innerHTML = `
         <b>${answerText}</b> is wrong! The correct answer was <b>${q.answers[q.correctIndex]}</b>
         `;
-        firebaseMsg += ` ${thePlayersName.value} was wrong :(`
+        firebaseMsg += ` <b>${thePlayersName.value}</b> was wrong :( The correct answer was <b>${q.answers[q.correctIndex]}</b>`
   }  
   logToFirebase(firebaseMsg);
   
@@ -99,7 +99,7 @@ function showResultScreen(category) {
   showScreen('result-screen');
 
   const resultSection = document.getElementById('result-screen');
-  let endQuizMsg = `${thePlayersName.value} completed the ${questions[category].length} questions from the ${category} category, and scored ${score}!`;
+  let endQuizMsg = `<b>${thePlayersName.value}</b> completed the <b>${questions[category].length}</b> questions from the <b>${category}</b> category, and scored <b>${score}</b>!`;
   logToFirebase(endQuizMsg);
 
   resultSection.innerHTML = `
