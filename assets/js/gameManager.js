@@ -46,7 +46,7 @@ export function renderQuestion() {
     btn.textContent = text;
 
     btn.addEventListener('click', () => {
-      handleAnswer(index, category);
+      handleAnswer(btn.textContent, index, category, q);
     });
 
     li.appendChild(btn);
@@ -54,15 +54,19 @@ export function renderQuestion() {
   });
 }
 
-function handleAnswer(selectedIndex, category) {
+function handleAnswer(answerText, selectedIndex, category, q) {
   const current = questions[category][currentQuestionIndex];
   const feedback = document.getElementById('feedback');
 
   if (selectedIndex === current.correct) {
     score++;
-    feedback.textContent = 'Correct!';
+    feedback.innerHTML = `
+        <b>${answerText}</b> is correct!
+        `;
   } else {
-    feedback.textContent = `Wrong! The correct answer was ${current.answers[current.correct]}`;
+    feedback.innerHTML = `
+        <b>${answerText}</b> is wrong! The correct answer was <b>${current.answers[current.correctIndex]}</b>
+    `;
   }
   
   questionCounter.innerHTML+= `<button id="nextQuestionBtn" class="start-button">Next Question</button>`
