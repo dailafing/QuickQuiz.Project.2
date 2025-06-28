@@ -80,6 +80,7 @@ function handleAnswer(answerText, selectedIndex, category, q) {
 
   currentQuestionIndex++;
   nextQuestionButton.addEventListener('click', () => {
+
     if (currentQuestionIndex < questions[category].length) {
         renderQuestion();
     } else {
