@@ -14,11 +14,21 @@ function initKeyboardNavigation() {
   if (!navigableItems.length) return;
 
   navigableItems[currentFocusedIndex].focus(); // Criteria 3.5 — Set initial focus
-  document.addEventListener('keydown', handleKeyNavigation);
+  window.addEventListener('keydown', handleKeyNavigation);
 }
 
+
 // ====== Keyboard Event Handler ======
-function handleKeyNavigation(event) {
+
+  function handleKeyNavigation(event) {
+    document.addEventListener('focusin', () => {
+    const activeEl = document.activeElement;
+    const newIndex = navigableItems.indexOf(activeEl);
+    if (newIndex !== -1) {
+      currentFocusedIndex = newIndex;
+    }
+  });
+
   const key = event.key;
 
   switch (key) { // Criteria 3.5 — Directional nav
