@@ -45,7 +45,7 @@
 
       </div>
 
-      <p id="bestScore">Today's Best: 0</p>
+      <!-- <p id="bestScore">Today's Best: 0</p> -->
 
       <p id="selectedCategoryText" aria-live="polite">No Category Selected</p>
 
@@ -60,6 +60,11 @@
         <p class="btn-text">Start Game!</p>
       </button>
 
+      <!-- Show Log from Firebase -->
+      <div>
+        <a href="#" id="toggleLog" style="font-size: 0.9em; display: inline-block; margin-top: 20px;">Show log ▼</a>
+        <div id="logBox" style="display: none; max-height: 200px; overflow-y: scroll; background: #f9f9f9; padding: 10px; border: 1px solid #ccc; margin-top: 10px; font-family: monospace; font-size: 0.85em;"></div>
+      </div>
 
     </section>
 
