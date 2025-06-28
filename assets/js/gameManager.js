@@ -75,6 +75,7 @@ function handleAnswer(answerText, selectedIndex, category, q) {
         `;
   }
   
+  questionCounter.innerHTML+= `<button id="nextQuestionBtn" class="start-button">Next Question</button>`;
   const nextQuestionButton = document.getElementById('nextQuestionBtn');
 
   currentQuestionIndex++;
