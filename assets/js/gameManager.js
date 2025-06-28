@@ -55,7 +55,6 @@ export function renderQuestion() {
 }
 
 function handleAnswer(answerText, selectedIndex, category, q) {
-  const current = q;
   const feedback = document.getElementById('feedback');
   
   // Disable the answer buttons
@@ -64,14 +63,14 @@ function handleAnswer(answerText, selectedIndex, category, q) {
     button.disabled = true;
   }
 
-  if (selectedIndex === current.correctIndex) {
+  if (selectedIndex === q.correctIndex) {
     score++;
     feedback.innerHTML = `
         <b>${answerText}</b> is correct!
         `;
   } else {
     feedback.innerHTML = `
-        <b>${answerText}</b> is wrong! The correct answer was <b>${current.answers[current.correctIndex]}</b>
+        <b>${answerText}</b> is wrong! The correct answer was <b>${q.answers[q.correctIndex]}</b>
         `;
   }
   
