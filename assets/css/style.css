@@ -231,7 +231,6 @@ main {
   text-align: center;
   cursor: pointer;
   white-space: normal;
-  word-break: break-word;
   transition: background-color 0.3s, transform 0.2s;
 }
 
