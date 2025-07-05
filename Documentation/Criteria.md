@@ -68,7 +68,18 @@ web application should:
 
 - 2.1 Write JavaScript code, that passes through a linter (e.g. JSLint) with no major issues and write validated HTML and CSS code.
 
-    ##### Evidence:
+    #### Evidence:
+
+    ##### app.js:
+
+    <img src="img/screenshots/JSLint-The-JavaScript-Code-Quality-and-Coverage-Tool.png">
+
+    #####
+    
+    
+    ----
+
+    ##### CSS:
 
     <img src="img/screenshots/W3C-CSS-Validator-results-for-TextArea-CSS-level-3-SVG-.png">
 
