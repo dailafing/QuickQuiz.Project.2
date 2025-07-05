@@ -72,7 +72,7 @@ web application should:
 
     ##### app.js:
 
-    <img src="img/screenshots/JSLint-The-JavaScript-Code-Quality-and-Coverage-Tool.png">
+    <img src="img/screenshots/JSLint-app.js.png">
 
     ----
 
