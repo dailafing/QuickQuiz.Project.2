@@ -66,6 +66,14 @@ web application should:
 
 #### Criteria 2:
 
+- 2.1 Write JavaScript code, that passes through a linter (e.g. JSLint) with no major issues and write validated HTML and CSS code.
+
+    ##### Evidence:
+
+    <img src="img/screenshots/W3C-CSS-Validator-results-for-TextArea-CSS-level-3-SVG-.png">
+
+    ---
+
 - 2.5 Use external files and proper linking. You should:
 
     - Put JavaScript code in external .js files.
