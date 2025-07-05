@@ -37,7 +37,6 @@ export function renderQuestion() {
   questionCounter.textContent = `Question ${currentQuestionIndex + 1} of ${questions[category].length}`;
 
   q.answers.forEach((text, index) => {
-    // const li = document.createElement('li');
     const btn = document.createElement('button');
 
     btn.className = 'answer-btn';
@@ -49,7 +48,6 @@ export function renderQuestion() {
       handleAnswer(btn.textContent, index, category, q);
     });
 
-    // li.appendChild(btn);
     answerList.appendChild(btn);
   });
   logToFirebase(`Player: <b>${thePlayersName.value}</b> chose the <b>${category}</b> category, and is presented with the question: <b>"${q.question}"</b>`);
